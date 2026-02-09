@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FeaturamaTester.ViewModels"
+             x:Class="FeaturamaTester.Views.SettingsPage"
+             x:DataType="vm:SettingsViewModel"
+             Title="Settings">
+
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="16">
+
+            <Label Text="SDK Configuration"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,8" />
+
+            <!-- API Key -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="API Key"
+                       FontSize="13"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                <Frame Padding="0"
+                       CornerRadius="8"
+                       BorderColor="{AppThemeBinding Light=#E0E0E0, Dark=#333333}"
+                       BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2C2C2C}">
+                    <Entry Text="{Binding ApiKey}"
+                           Placeholder="fm_live_..."
+                           Keyboard="Plain"
+                           Margin="12,0" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Base URL -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="Base URL"
+                       FontSize="13"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                <Frame Padding="0"
+                       CornerRadius="8"
+                       BorderColor="{AppThemeBinding Light=#E0E0E0, Dark=#333333}"
+                       BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2C2C2C}">
+                    <Entry Text="{Binding BaseUrl}"
+                           Placeholder="http://localhost:5001"
+                           Keyboard="Url"
+                           Margin="12,0" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- User ID (read-only) -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="User ID (auto-generated)"
+                       FontSize="13"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                <Frame Padding="0"
+                       CornerRadius="8"
+                       BorderColor="{AppThemeBinding Light=#E0E0E0, Dark=#333333}"
+                       BackgroundColor="{AppThemeBinding Light=#EEEEEE, Dark=#222222}">
+                    <Entry Text="{Binding UserId}"
+                           IsReadOnly="True"
+                           Margin="12,0"
+                           TextColor="{AppThemeBinding Light=#999999, Dark=#777777}" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Save Button -->
+            <Button Text="Save Settings"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="48"
+                    CornerRadius="10"
+                    Margin="0,8,0,0" />
+
+            <!-- Status -->
+            <Label Text="{Binding StatusMessage}"
+                   FontSize="13"
+                   TextColor="{StaticResource Primary}"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Info Section -->
+            <Frame Margin="0,16,0,0"
+                   Padding="16"
+                   CornerRadius="10"
+                   BorderColor="{AppThemeBinding Light=#E0E0E0, Dark=#333333}"
+                   BackgroundColor="{AppThemeBinding Light=#F9F9F9, Dark=#252525}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="How to get an API Key"
+                           FontSize="15"
+                           FontAttributes="Bold" />
+                    <Label Text="1. Start the Featurama backend (port 5001)"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                    <Label Text="2. Register/login at http://localhost:3007"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                    <Label Text="3. Create a project in the dashboard"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                    <Label Text="4. Copy the API key (starts with fm_live_)"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                    <Label Text="5. Paste it in the API Key field above"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#666666, Dark=#AAAAAA}" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

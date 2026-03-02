@@ -6,7 +6,7 @@
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
     <RootNamespace>FeaturamaTester</RootNamespace>
-    <ApplicationTitle>Featurama Tester</ApplicationTitle>
+    <ApplicationTitle>FT MAUI</ApplicationTitle>
     <ApplicationId>io.featurama.tester</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
